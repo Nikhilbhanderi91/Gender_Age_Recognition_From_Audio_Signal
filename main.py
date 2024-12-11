@@ -3,7 +3,6 @@ import librosa
 import numpy as np
 import io
 
-
 def recognize_speech_from_mic():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -12,7 +11,6 @@ def recognize_speech_from_mic():
         print("Say something:")
         audio = recognizer.listen(source)
 
-        
         try:
             print("Recognizing...")
             text = recognizer.recognize_google(audio)
@@ -47,7 +45,6 @@ def estimate_gender_from_audio(audio_data):
     
     except Exception as e:
         return f"An error occurred during gender estimation: {e}", None
-
 
 # def estimate_age_from_audio(pitch_median):
 #     if pitch_median < 160:
