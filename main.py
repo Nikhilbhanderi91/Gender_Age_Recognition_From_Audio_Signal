@@ -30,6 +30,7 @@ def estimate_gender_from_audio(audio_data):
         
         if len(pitches) == 0:
             return "No pitch detected"
+
         
         pitch_median = np.median(pitches)
         print(f"Detected median pitch: {pitch_median} Hz")
