@@ -3,6 +3,7 @@ import librosa
 import numpy as np
 import io
 
+
 def recognize_speech_from_mic():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -11,6 +12,7 @@ def recognize_speech_from_mic():
         print("Say something:")
         audio = recognizer.listen(source)
 
+        
         try:
             print("Recognizing...")
             text = recognizer.recognize_google(audio)
@@ -72,6 +74,7 @@ def estimate_age_from_audio(pitch_median):
 
 def process_live_audio():
     transcription, audio_data = recognize_speech_from_mic()
+
     
     if audio_data is None:
         print("No audio captured or an error occurred.")
