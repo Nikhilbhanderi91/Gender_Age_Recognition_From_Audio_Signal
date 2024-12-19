@@ -3,7 +3,6 @@ import librosa
 import numpy as np
 import io
 
-
 def recognize_speech_from_mic():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -11,7 +10,6 @@ def recognize_speech_from_mic():
         recognizer.adjust_for_ambient_noise(source)
         print("Say something:")
         audio = recognizer.listen(source)
-
         
         try:
             print("Recognizing...")
@@ -33,7 +31,6 @@ def estimate_gender_from_audio(audio_data):
         if len(pitches) == 0:
             return "No pitch detected"
 
-        
         pitch_median = np.median(pitches)
         print(f"Detected median pitch: {pitch_median} Hz")
         
@@ -74,7 +71,6 @@ def estimate_age_from_audio(pitch_median):
 
 def process_live_audio():
     transcription, audio_data = recognize_speech_from_mic()
-
     
     if audio_data is None:
         print("No audio captured or an error occurred.")
@@ -82,7 +78,6 @@ def process_live_audio():
     
     gender, pitch_median = estimate_gender_from_audio(audio_data)
     age = estimate_age_from_audio(pitch_median) if pitch_median else "N/A"
-    
     return transcription, gender, age
 
 # Example usage:
