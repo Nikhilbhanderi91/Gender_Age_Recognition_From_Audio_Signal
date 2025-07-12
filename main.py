@@ -69,6 +69,7 @@ def estimate_age_from_audio(pitch_median):
         age = "Child (Approx. < 13)"
     return age
 
+
 def process_live_audio():
     transcription, audio_data = recognize_speech_from_mic()
     
@@ -86,3 +87,4 @@ transcription, gender, age = process_live_audio()
 print(f"Transcription: {transcription}")
 print(f"Estimated Gender: {gender}")
 print(f"Estimated Age Range: {age}") 
+
