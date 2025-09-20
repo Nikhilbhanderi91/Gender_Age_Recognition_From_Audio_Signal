@@ -72,6 +72,8 @@ def estimate_age_from_audio(pitch_median):
     return age
 
 
+
+
 def process_live_audio():
     transcription, audio_data = recognize_speech_from_mic()
     
