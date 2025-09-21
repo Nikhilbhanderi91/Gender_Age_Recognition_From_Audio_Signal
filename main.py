@@ -11,7 +11,6 @@ def recognize_speech_from_mic():
         recognizer.adjust_for_ambient_noise(source)
         print("Say something:")
         audio = recognizer.listen(source)
-
         
         try:
             print("Recognizing...")
