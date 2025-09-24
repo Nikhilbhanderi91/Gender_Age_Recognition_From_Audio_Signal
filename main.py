@@ -3,6 +3,7 @@ import librosa
 import numpy as np
 import io
 
+
 def recognize_speech_from_mic():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
